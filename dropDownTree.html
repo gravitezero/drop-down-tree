@@ -1,0 +1,81 @@
+<!DOCTYPE>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<style type="text/css">
+
+			ul {
+				display: none;
+				padding: 0 0 0 1em;
+			}
+
+			li {
+				display: block;
+				list-style-type: none;
+				padding: 5px;
+				margin: 0;
+			}
+
+			input[type='checkbox'] {
+				display: none;
+			}
+
+			label {
+				padding: 5px 2em;
+				background: rgba(0, 0, 0, 0.1);
+				border-left: 1px solid transparent;
+			}
+
+			label:hover {
+				background: rgba(0, 0, 0, 0.15);
+				border-left: 1px solid rgba(0, 0, 0, 0.2);
+			}
+
+			label[for^="expand"] {
+				background: none;
+				border-left: none;
+				font-size: 8px;
+				padding: 5px 5px;
+				margin: 0;
+			}
+
+			label[for^="expand"]:before {
+				content: "▶"
+			}
+
+			&:checked + label:before {
+				content: "▼";
+			}	
+
+			input:checked + label {
+				background: rgba(0, 0, 0, 0.2);
+				border-left: 1px solid rgba(0, 0, 0, 0.5);
+			}
+
+
+			input[id^="expand"]:checked + label{
+				background: none;
+				border-left: none;
+			}
+
+			input[id^="expand"]:checked + label:before {
+				content: "▼";
+			}
+
+			input[id^="expand"]:checked ~ ul{
+				display: block;
+			}
+
+		</style>
+	</head>
+	<body>
+		<input type="checkbox" id="expandBranch"/><label for="expandBranch"></label>
+		<input type="checkbox" id="branch"/><label for="branch"><span class="label">Branch</span></label>
+		<ul>
+			<li><input type="checkbox" id="item1"/><label for="item1">Item 1</label></li>
+			<li><input type="checkbox" id="item2"/><label for="item2">Item 2</label></li>
+			<li><input type="checkbox" id="item3"/><label for="item3">Item 3</label></li>
+			<li><input type="checkbox" id="item4"/><label for="item4">Item 4</label></li>
+		</ul>
+	</body>
+</html>
